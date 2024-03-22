@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote Now - College Voting Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to Font Awesome for icons -->
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9; /* Background color for the entire page */
+    }
+
+    header {
+      background-color: #131415;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background-color: #fff; /* Background color for individual boxes */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    /* Voting animation styles */
+    .voting-animation {
+      width: 200px;
+      height: 200px;
+      background-color: #f1f1f1;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .vote-button {
+      width: 100px;
+      height: 100px;
+      background-color: #1c4f85;
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 24px;
+      line-height: 100px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .vote-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // JavaScript for voting.html
+    function castVote() {
+      alert("Your vote has been cast successfully!");
+      // Add functionality to submit vote to server if needed
+    }
+  </script>
+  <header>
+    <h1><i class="fas fa-graduation-cap"></i> College Voting Platform</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#">Vote Now</a></li>
+        <li><a href="results.html">Live Results</a></li>
+        <li><a href="engagement.html">Engagement</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="voting" class="box">
+      <h2>Cast Your Vote</h2>
+      <div class="voting-animation">
+        <button class="vote-button" onclick="castVote()"><i class="fas fa-vote-yea"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 College Voting Platform</p>
+  </footer>
+</body>
+</html>

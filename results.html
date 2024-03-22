@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Results - College Voting Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to Font Awesome for icons -->
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+
+    header {
+      background-color: #9d1ad9;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .result-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .result-card h2 {
+      margin-top: 0;
+    }
+
+    .result-card p {
+      margin-bottom: 5px;
+    }
+
+    .result-card .result-bar {
+      height: 20px;
+      background-color: #0f0f10;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-graduation-cap"></i> College Voting Platform</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="voting.html">Vote Now</a></li>
+        <li><a href="#">Live Results</a></li>
+        <li><a href="engagement.html">Engagement</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main id="live-results">
+    <!-- Placeholder content -->
+    <div class="result-card">
+      <h2>President Election</h2>
+      <p>Candidate A: 45%</p>
+      <div class="result-bar" style="width: 45%;"></div>
+      <p>Candidate B: 55%</p>
+      <div class="result-bar" style="width: 55%;"></div>
+    </div>
+
+    <div class="result-card">
+      <h2>Vice President Election</h2>
+      <p>Candidate X: 60%</p>
+      <div class="result-bar" style="width: 60%;"></div>
+      <p>Candidate Y: 40%</p>
+      <div class="result-bar" style="width: 40%;"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 College Voting Platform</p>
+  </footer>
+
+  <script>
+    // Function to fetch live results from server and update the page
+    function fetchLiveResults() {
+      // Replace this with your server endpoint to fetch live results
+      fetch('live-results-endpoint')
+        .then(response => response.json())
+        .then(data => {
+          // Clear existing results
+          document.getElementById('live-results').innerHTML = '';
+
+          // Loop through fetched data and create result cards
+          data.forEach(result => {
+            const resultCard = document.createElement('div');
+            resultCard.classList.add('result-card');
+
+            const title = document.createElement('h2');
+            title.textContent = result.title;
+            resultCard.appendChild(title);
+
+            result.candidates.forEach(candidate => {
+              const p = document.createElement('p');
+              p.textContent = `${candidate.name}: ${candidate.percentage}%`;
+
+              const resultBar = document.createElement('div');
+              resultBar.classList.add('result-bar');
+              resultBar.style.width = `${candidate.percentage}%`;
+
+              resultCard.appendChild(p);
+              resultCard.appendChild(resultBar);
+            });
+
+            document.getElementById('live-results').appendChild(resultCard);
+          });
+        })
+        .catch(error => console.error('Error fetching live results:', error));
+    }
+
+    // Fetch live results initially and set interval for continuous updates
+    fetchLiveResults();
+    setInterval(fetchLiveResults, 5000); // Fetch results every 5 seconds
+  </script>
+</body>
+</html>

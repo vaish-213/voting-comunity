@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engagement - College Voting Platform</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0e1012;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-content {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .carousel-button-left {
+      left: 10px;
+    }
+
+    .carousel-button-right {
+      right: 10px;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      nav ul li a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-graduation-cap"></i> College Voting Platform</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="voting.html">Vote Now</a></li>
+        <li><a href="results.html">Live Results</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="carousel-container">
+      <div class="carousel-content">
+        <div class="carousel-item">
+          <center>
+          <h2>Engagement Slide 1</h2>
+          <p>This is the content of engagement slide 1.</p>
+        </div>
+        <div class="carousel-item">
+          <center>
+          <h2>Engagement Slide 2</h2>
+          <p>This is the content of engagement slide 2.</p>
+          </center>
+        </div>
+        <div class="carousel-item">
+          <center>
+          <h2>Engagement Slide 3</h2>
+          <p>This is the content of engagement slide 3.</p>
+          </center>
+          </centre>
+        </div>
+      </div>
+      <button class="carousel-button carousel-button-left" onclick="prevSlide()">&#10094;</button>
+      <button class="carousel-button carousel-button-right" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 College Voting Platform</p>
+  </footer>
+
+  <script>
+    // JavaScript for engagement.html
+    let currentSlide = 0;
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    const totalSlides = carouselItems.length;
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function updateCarousel() {
+      const moveAmount = -100 * currentSlide;
+      document.querySelector(".carousel-content").style.transform = `translateX(${moveAmount}%)`;
+    }
+  </script>
+</body>
+</html>

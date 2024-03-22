@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - College Voting Platform</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: #070a0e;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    nav {
+      background-color: #0056b3;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffc107; /* Change color on hover */
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    .card form {
+      margin-bottom: 20px;
+    }
+
+    .card form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .card form input[type="text"],
+    .card form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .card form button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .card form button:hover {
+      background-color: #08090a; /* Darker color on hover */
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .social-icons {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin-right: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffc107; /* Change color on hover */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-graduation-cap"></i> College Voting Platform</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="voting.html">Vote Now</a></li>
+      <li><a href="results.html">Live Results</a></li>
+      <li><a href="engagement.html">Engagement</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <h2>Login</h2>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required><br><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br><br>
+          <button type="button" onclick="authenticateUser()">Login</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 College Voting Platform</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function authenticateUser() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Dummy authentication logic (replace with actual authentication)
+      if (username === "admin" && password === "password") {
+        alert("Login successful! Redirecting to dashboard...");
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
